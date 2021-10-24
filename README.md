@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
     request_id:,
     title:
   )
-    @article = current_user.articles.find(article_id)
+    @article = Article.find(article_id)
     @article.update(
       body: body,
       title: title,
