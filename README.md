@@ -87,6 +87,8 @@ Supported values are:
     - Extract data from HTTP request header.
 - `:path`
     - Extract data from URL path parameters.
+- `:query`
+    - Extract data from URL query parameters.
 
 ### `:name`
 
