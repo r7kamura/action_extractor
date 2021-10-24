@@ -1,5 +1,7 @@
 # ActionExtractor
 
+[![Gem Version](https://badge.fury.io/rb/action_extractor.svg)](https://badge.fury.io/rb/action_extractor)
+
 Arguments extractor for Rails actions.
 
 ## Installation
