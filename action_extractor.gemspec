@@ -5,7 +5,7 @@ require_relative "lib/action_extractor/version"
 Gem::Specification.new do |spec|
   spec.name          = "action_extractor"
   spec.version       = ActionExtractor::VERSION
-  spec.authors       = ["r7kamura"]
+  spec.authors       = ["Ryo Nakamura"]
   spec.email         = ["r7kamura@gmail.com"]
 
   spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
