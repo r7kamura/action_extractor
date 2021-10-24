@@ -7,20 +7,16 @@ module ActionExtractor
       extraction = self.class.extractions[method_name]
       if extraction
         keyword_arguments = extraction.definitions.each_with_object({}) do |(argument_name, definition), object|
-          name = definition[:name] || argument_name.to_s
-          from = definition[:from]
-          object[argument_name] = begin
-            case from
-            when :header
-              request.headers[name]
-            when :form_data
-              request.request_parameters[name.to_sym]
-            when :path
-              request.path_parameters[name.to_sym]
-            else
-              raise ::ArgumentError, "Unknown :from value in `.extract` arguments: `#{from}`."
-            end
+          extractor = Extractors::Base.extractors[definition[:from]]
+          unless extractor
+            raise ::ArgumentError, "Unknown :from value in `.extract` arguments: `#{definition[:from].inspect}`."
           end
+
+          object[argument_name] = extractor.call(
+            argument_name: argument_name,
+            controller: self,
+            definition: definition
+          )
         end
         super(
           method_name,
