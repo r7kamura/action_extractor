@@ -69,6 +69,39 @@ class ArticlesController < ApplicationController
 end
 ```
 
+### `.extract(...).on(action_name)`
+
+By using this DSL method, we can state what kind of input value the subsequent action is expecting.
+
+Note that the argument names passed here will also be used at the action call.
+
+### `:from`
+
+This value represents where the data is comming from.
+
+Supported values are:
+
+- `:form_data`
+    - Extract data while assuming the request body is encoded from form data.
+- `:header`
+    - Extract data from HTTP request header.
+- `:path`
+    - Extract data from URL path parameters.
+
+### `:name`
+
+This value represents what name of value to extract from the data source.
+
+In many cases, this option is not necessary because the argument name is used as the key for extraction instead.
+This is useful for the case when the names overlap or when extracting from data source with different naming convention (e.g. HTTP headers).
+
+### `:schema`
+
+It's currently unfinished, but we intend to use this value for the following purposes:
+
+- Validate input values with OpenAPI compatible implementation
+- Provide metadata that can be used to generate OpenAPI document
+
 ## Acknowledgements
 
 This gem was inspired by the following libraries:
