@@ -84,9 +84,9 @@ This value represents where the data is comming from.
 Supported values are:
 
 - `:form_data`
-    - Extract data while assuming the request body is encoded from form data.
+    - Extract data from form data in request body.
 - `:header`
-    - Extract data from HTTP request header.
+    - Extract data from request header.
 - `:path`
     - Extract data from URL path parameters.
 - `:query`
