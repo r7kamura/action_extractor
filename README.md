@@ -56,15 +56,15 @@ class ArticlesController < ApplicationController
     request_id:,
     title:
   )
-    @article = Article.find(article_id)
-    @article.update(
+    article = Article.find(article_id)
+    if article.update(
       body: body,
       title: title,
       request_id: request_id,
     )
-    if @article.save
-      redirect_to @article
+      redirect_to article
     else
+      @article = article
       render :edit, status: 400
     end
   end
