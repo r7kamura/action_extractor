@@ -112,6 +112,7 @@ This gem was inspired by the following libraries:
 
 - [actix/actix-web](https://github.com/actix/actix-web)
 - [asakusarb/action_args](https://github.com/asakusarb/action_args)
+- [merb/merb](https://github.com/merb/merb)
 - [r7kamura/weak_parameters](https://github.com/r7kamura/weak_parameters)
 
 ## License
