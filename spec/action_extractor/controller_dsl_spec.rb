@@ -11,8 +11,6 @@ end
 Rails.logger = Logger.new(nil)
 
 class ArticlesController < ActionController::Base
-  extend ::ActionExtractor::ControllerDsl
-
   extract(
     article_id: {
       from: :path,

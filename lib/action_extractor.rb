@@ -9,3 +9,7 @@ module ActionExtractor
 end
 
 AbstractController::Base.prepend ActionExtractor::ActionArgumentsTakable
+
+ActiveSupport.on_load(:action_controller) do
+  extend ActionExtractor::ControllerDsl
+end

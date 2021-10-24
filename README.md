@@ -22,8 +22,6 @@ Or install it yourself as:
 
 ```ruby
 class ArticlesController < ApplicationController
-  extend ::ActionExtractor::ControllerDsl
-
   extract(
     article_id: {
       from: :path,
