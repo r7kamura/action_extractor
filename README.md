@@ -71,8 +71,9 @@ end
 
 ## Acknowledgements
 
-This gem was inspired by the following gems:
+This gem was inspired by the following libraries:
 
+- [actix/actix-web](https://github.com/actix/actix-web)
 - [asakusarb/action_args](https://github.com/asakusarb/action_args)
 - [r7kamura/weak_parameters](https://github.com/r7kamura/weak_parameters)
 
