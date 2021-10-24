@@ -20,7 +20,58 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+class ArticlesController < ApplicationController
+  extend ::ActionExtractor::ControllerDsl
+
+  extract(
+    article_id: {
+      from: :path,
+      schema: {
+        type: 'integer',
+      },
+    },
+    body: {
+      from: :form_data,
+      schema: {
+        type: 'string',
+      },
+    },
+    request_id: {
+      from: :header,
+      name: 'X-Request-Id',
+      schema: {
+        format: 'uuid',
+        type: 'string',
+      },
+    },
+    title: {
+      from: :form_data,
+      schema: {
+        type: 'string',
+      },
+    },
+  ).on \
+  def update(
+    article_id:,
+    body:,
+    request_id:,
+    title:
+  )
+    @article = current_user.articles.find(article_id)
+    @article.update(
+      body: body,
+      title: title,
+      request_id: request_id,
+    )
+    if @article.save
+      redirect_to @article
+    else
+      render :edit, status: 400
+    end
+  end
+end
+```
 
 ## Development
 
