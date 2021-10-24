@@ -16,8 +16,10 @@ module ActionExtractor
     end
 
     # @param [Symbol] action_name
+    # @return [Symbol]
     def on(action_name)
       @controller_class.extractions[action_name.to_s] = self
+      action_name
     end
   end
 end
