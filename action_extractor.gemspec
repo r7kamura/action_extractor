@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require_relative "lib/action_extractor/version"
+require_relative 'lib/action_extractor/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "action_extractor"
+  spec.name          = 'action_extractor'
   spec.version       = ActionExtractor::VERSION
-  spec.authors       = ["Ryo Nakamura"]
-  spec.email         = ["r7kamura@gmail.com"]
+  spec.authors       = ['Ryo Nakamura']
+  spec.email         = ['r7kamura@gmail.com']
 
-  spec.summary       = "Arguments extractor for Rails actions."
+  spec.summary       = 'Arguments extractor for Rails actions.'
   spec.homepage      = "https://github.com/r7kamura/#{spec.name}"
-  spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 2.6.0'
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/main/CHANGELOG.md"
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['changelog_uri'] = "#{spec.homepage}/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
