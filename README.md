@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
 end
 ```
 
-### `.extract(...).on(action_name)`
+### `extract(...).on(action_name)`
 
 By using this DSL method, we can state what kind of input value the subsequent action is expecting.
 
